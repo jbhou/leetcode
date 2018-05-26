@@ -72,7 +72,7 @@ public class SoluationRemoveNthNodeFromEndOfList {
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
-        ListNode newHead = new SoluationRemoveNthNodeFromEndOfList().removeNthFromEnd(head, 2);
+        ListNode newHead = new SoluationRemoveNthNodeFromEndOfList().removeNthFromEnd(head, 4);
         while (newHead != null) {
             System.err.println(newHead.val);
             newHead = newHead.next;
