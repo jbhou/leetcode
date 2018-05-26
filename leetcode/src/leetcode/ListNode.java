@@ -13,29 +13,26 @@
 package leetcode;
 
 /**
- * ClassName:SolutionTwoSums <br/>
+ * ClassName:ListNode <br/>
  * Function: TODO ADD FUNCTION. <br/>
  * Reason: TODO ADD REASON. <br/>
- * Date: 2018年5月23日 下午6:25:19 <br/>
+ * Date: 2018年5月26日 上午10:13:50 <br/>
  * 
  * @author lenovo
  * @version 1.0.0
  * @see
  */
-public class SolutionTwoSums {
-    public int[] twoSum(int[] nums, int target) {
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == target)
-                    return new int[] { i, j };
-            }
-        }
-        return new int[] {};
+public class ListNode {
+    public int val;
+    public ListNode next;
+
+    public ListNode(int x) {
+        val = x;
     }
 
-    public static void main(String[] args) {
-        int[] s = new SolutionTwoSums().twoSum(new int[] { 2, 157, 7, 11 }, 9);
-        System.err.println(s[0]);
-        System.err.println(s[1]);
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return val +"";
     }
 }

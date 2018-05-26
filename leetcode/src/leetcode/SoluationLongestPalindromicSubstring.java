@@ -31,7 +31,6 @@ public class SoluationLongestPalindromicSubstring {
         for (int i = 0; i < s.length(); i++) {
             
             for (int j = i + pailndrome.length(); j < s.length()+1; j++) {
-                // for (int j = i + 1; j <= s.length(); j++) {
                 String subString = s.substring(i, j);
                 if (subString.length() > pailndrome.length() && isParlindrome(subString)) {
                     pailndrome = subString;
