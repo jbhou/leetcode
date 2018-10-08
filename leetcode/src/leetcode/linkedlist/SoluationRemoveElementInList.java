@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.linkedlist;
 
 /**
  * 删除链表中节点，思想:建立一个锚点为新的链表头
