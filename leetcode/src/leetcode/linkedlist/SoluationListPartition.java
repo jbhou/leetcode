@@ -34,9 +34,11 @@ public class SoluationListPartition {
             if (current.val < x) {
                     p1.next = current;
                     p1 = p1.next;
+                    p2.next=null;
             } else {
                     p2.next = current;
                     p2 = p2.next;
+                    p1.next=null;
             }
             current = current.next;
         }
