@@ -30,7 +30,7 @@ public class ListUtils {
         ListNode node8 = new ListNode(1);
         ListNode node9 = new ListNode(3);
         ListNode node10 = new ListNode(1);
-        ListNode node11 = new ListNode(5);
+//        ListNode node11 = new ListNode(5);
 
         head.next = node2;
         node2.next = node3;
@@ -43,7 +43,7 @@ public class ListUtils {
         node7.next = node8;
         node8.next = node9;
         node9.next = node10;
-        node10.next = node11;
+//        node10.next = node11;
         return head;
     }
 
