@@ -68,4 +68,23 @@ public class ListUtils {
         return head;
     }
 
+    public static ListNode createGeneralList(int size) {
+
+
+        ListNode head = new ListNode(0);
+        for (int i = 1; i <= size; i++) {
+            ListNode node = new ListNode(i);
+            addToList(head, node);
+        }
+        return head;
+    }
+
+    private static void addToList(ListNode head, ListNode node) {
+        ListNode current = head;
+
+        while (current.next != null) {
+            current = current.next;
+        }
+        current.next = node;
+    }
 }
