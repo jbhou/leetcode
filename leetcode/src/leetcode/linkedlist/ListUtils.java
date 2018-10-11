@@ -87,4 +87,20 @@ public class ListUtils {
         }
         current.next = node;
     }
+
+    public static void printList(MyLinkedList head) {
+
+
+
+
+
+
+
+        MyLinkedList node = head;
+        while (node != null) {
+            System.err.print(node + "-");
+            node = node.next;
+        }
+        System.err.println("null");
+    }
 }
