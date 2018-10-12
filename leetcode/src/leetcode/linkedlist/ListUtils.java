@@ -70,13 +70,12 @@ public class ListUtils {
 
     public static ListNode createGeneralList(int size) {
 
-
         ListNode head = new ListNode(0);
         for (int i = 1; i <= size; i++) {
             ListNode node = new ListNode(i);
             addToList(head, node);
         }
-        return head;
+        return head.next;
     }
 
     private static void addToList(ListNode head, ListNode node) {
@@ -89,11 +88,6 @@ public class ListUtils {
     }
 
     public static void printList(MyLinkedList head) {
-
-
-
-
-
 
 
         MyLinkedList node = head;
