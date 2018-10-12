@@ -19,14 +19,11 @@ public class SoluationReverseList {
         node5.next = node6;
         node6.next = null;
 
-        ListNode newList = reverse(head);
+//        ListNode newList = reverse(head);
 
+        ListNode newH = reverseByRecursion(head);
+        ListUtils.printList(newH);
 
-        System.err.println("after:");
-        while (newList != null) {
-            System.err.println(newList);
-            newList = newList.next;
-        }
 
     }
 
@@ -39,7 +36,6 @@ public class SoluationReverseList {
         ListNode current = head;
         while (current != null) {
 
-
             next = current.next;
             if (next == null) {
                 newHead = current;
@@ -49,7 +45,16 @@ public class SoluationReverseList {
             current = next;
         }
         return newHead;
+    }
 
 
+    public static ListNode reverseByRecursion(ListNode head) {
+
+        if (head == null || head.next == null)
+            return head;
+        ListNode prev = reverseByRecursion(head.next);// 把头节点之后的节点反转后，再把头节点反转即可
+        head.next.next = head;
+        head.next = null;
+        return prev;
     }
 }
