@@ -78,8 +78,8 @@ public class Sortter {
 
         if (a.length <= 1) return;
         for (int i = 0; i < a.length; i++) {
-            int minIndex = a[i];
-            int minValue = Integer.MAX_VALUE;
+            int minIndex = i;
+            int minValue = a[i];
             for (int j = i; j < a.length; j++) {
                 if (minValue > a[j]) {
                     minValue = a[j];
