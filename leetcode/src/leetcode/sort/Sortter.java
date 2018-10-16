@@ -4,10 +4,12 @@ public class Sortter {
 
     public static void main(String[] args) {
 
-        int a[] = new int[]{1, 4, 2, 1, 56, 64, 22, 76, 53};
-//        bubbleSort(a);
+        int a[] = new int[]{8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
+
+        //        bubbleSort(a);
 //        insertionSort(a);
-        selectionSort(a);
+//        selectionSort(a);
+        shellSort(a);
         for (int i = 0; i < a.length; i++) {
             System.err.print(a[i] + "\t");
         }
@@ -90,4 +92,33 @@ public class Sortter {
             a[i] = minValue;
         }
     }
+
+
+    public static void shellSort(int[] a) {
+        if (a.length <= 1) return;
+        int len = a.length;
+        int step = len / 2;
+        while (step >= 1) {
+
+
+            for (int i = 0; i < len; i++) {
+                int j = i - step;
+                int v = a[i];
+                for (; j >= 0; j -= step) {
+                    if (a[j] > v) {
+                        a[j + step] = a[j];
+                    } else {
+                        break;
+                    }
+                }
+                a[j + step] = v;
+            }
+            step = step / 2;
+
+        }
+
+
+    }
+
+
 }
