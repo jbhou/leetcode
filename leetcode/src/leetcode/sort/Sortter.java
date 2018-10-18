@@ -9,7 +9,8 @@ public class Sortter {
         //        bubbleSort(a);
 //        insertionSort(a);
 //        selectionSort(a);
-        shellSort(a);
+//        shellSort(a);
+        quickSort(a, 0, a.length - 1);
         for (int i = 0; i < a.length; i++) {
             System.err.print(a[i] + "\t");
         }
@@ -116,7 +117,53 @@ public class Sortter {
             step = step / 2;
 
         }
+    }
 
+
+    public static void quickSort(int[] a, int p, int r) {
+
+        if (p + 1 == 3) {
+            System.err.println(a[p]);
+        }
+
+        if (p >= r) {
+            return;
+        }
+
+
+        int q = partition(a, p, r);
+        quickSort(a, p, q - 1);
+        quickSort(a, q + 1, r);
+
+    }
+
+    private static int partition(int[] a, int p, int r) {
+
+        int pivot = a[r];
+        int i = p;
+        int j = p;
+        for (; j < r; j++) {
+            if (a[j] < pivot) {
+                int tmp = a[j];
+                a[j] = a[i];
+                a[i] = tmp;
+                i++;
+            }
+        }
+        int tmp = a[i];
+        a[i] = a[r];
+        a[r] = tmp;
+        System.err.println("i=" + i);
+        print(a);
+        return i;
+    }
+
+    private static void print(int[] a) {
+        System.err.print("\t");
+        for (int i : a) {
+            System.err.print(i + "\t");
+        }
+        System.err.println();
 
     }
 
