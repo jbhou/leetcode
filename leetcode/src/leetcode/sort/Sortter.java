@@ -158,6 +158,7 @@ public class Sortter {
         return i;
     }
 
+
     private static void print(int[] a) {
         System.err.print("\t");
         for (int i : a) {
