@@ -3,6 +3,15 @@ package leetcode.search;
 public class BinerySearch {
 
 
+    /**
+     * 二分搜索  查找效率  O(log n)
+     * 使用的条件很多:
+     * 1:必须是连续内存，数组，不适用于太大的数据量
+     * 2:数组必须有序，适用于一次排序，多次查找的无序数组,排序可以快排 (n*log n).排序的成本可以被分摊
+     *
+     * @param args
+     */
+
     public static void main(String[] args) {
 //        int t = 10000000;
         int t = 10;
@@ -10,8 +19,6 @@ public class BinerySearch {
         for (int i = 0; i < a.length; i++) {
             a[i] = i;
         }
-
-
         long start = System.currentTimeMillis();
         int index = loopBinerySearch(a, 30, 0, a.length - 1);
         System.err.println(index);
@@ -58,7 +65,7 @@ public class BinerySearch {
         int endIndex = end;
 
 
-        while (startIndex < endIndex) {
+        while (startIndex <= endIndex) {
             int midIndex = startIndex + ((endIndex - startIndex) >> 1);
             if (a[midIndex] == x) {
                 return midIndex;
