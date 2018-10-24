@@ -4,8 +4,9 @@ public class Sortter {
 
     public static void main(String[] args) {
 
-        int a[] = new int[]{8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
+//        int a[] = new int[]{8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
 
+        int[] a= new int[]{1,2,3,4,5,6,7,8};
         //        bubbleSort(a);
 //        insertionSort(a);
 //        selectionSort(a);
@@ -13,9 +14,9 @@ public class Sortter {
         quickSort(a, 0, a.length - 1);
         for (int i = 0; i < a.length; i++) {
             System.err.print(a[i] + "\t");
-        }
-
     }
+}
+
 
 
     /**
