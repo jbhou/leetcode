@@ -1,5 +1,7 @@
 package leetcode.search;
 
+import java.util.Collections;
+
 public class BinerySearch {
 
 
@@ -60,6 +62,7 @@ public class BinerySearch {
      */
 
     public static int loopBinerySearch(int[] a, int x, int start, int end) {
+
 
         int startIndex = start;
         int endIndex = end;
