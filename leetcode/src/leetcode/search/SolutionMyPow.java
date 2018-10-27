@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.search;
 
 import org.omg.PortableInterceptor.INACTIVE;
 
