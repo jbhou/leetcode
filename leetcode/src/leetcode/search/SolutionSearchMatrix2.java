@@ -23,14 +23,11 @@ public class SolutionSearchMatrix2 {
         if (matrix.length == 0) {
             return false;
         }
-
         int n = matrix.length;
-
         int m = matrix[0].length;
         if (m == 0) {
             return false;
         }
-
         for (int i = 0; i < n; i++) {
             int[] a = matrix[i];
             int low = 0;
