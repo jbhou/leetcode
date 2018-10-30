@@ -19,13 +19,9 @@ public class SolutionIsValidSudoku {
                 {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
                 {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
         };
-
         boolean b = isValidSudoku(character);
-
         System.err.println(b);
     }
-
-
     public static boolean isValidSudoku(char[][] board) {
 
 
