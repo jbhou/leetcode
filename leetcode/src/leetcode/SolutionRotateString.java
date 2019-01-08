@@ -14,8 +14,6 @@ public class SolutionRotateString {
 
         String s2 = a + a;
         return s2.contains(b);
-
-
     }
 
 
