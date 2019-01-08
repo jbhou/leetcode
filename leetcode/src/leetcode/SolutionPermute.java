@@ -14,7 +14,7 @@ public class SolutionPermute {
         return list;
     }
 
-    
+
     public void perm(List<List<Integer>> result, int[] nums, int begin, int end) {
 
 
