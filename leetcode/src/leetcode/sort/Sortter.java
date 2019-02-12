@@ -4,9 +4,9 @@ public class Sortter {
 
     public static void main(String[] args) {
 
-//        int a[] = new int[]{8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
+        int a[] = new int[]{8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
 
-        int[] a= new int[]{1,2,3,4,5,6,7,8};
+//        int[] a= new int[]{1,2,3,4,5,6,7,8};
         //        bubbleSort(a);
 //        insertionSort(a);
 //        selectionSort(a);
@@ -14,9 +14,8 @@ public class Sortter {
         quickSort(a, 0, a.length - 1);
         for (int i = 0; i < a.length; i++) {
             System.err.print(a[i] + "\t");
+        }
     }
-}
-
 
 
     /**
@@ -124,7 +123,7 @@ public class Sortter {
     public static void quickSort(int[] a, int p, int r) {
 
         if (p + 1 == 3) {
-            System.err.println(a[p]);
+            System.err.println("第三大的数是:"+a[p]);
         }
 
         if (p >= r) {
@@ -144,7 +143,7 @@ public class Sortter {
         int i = p;
         int j = p;
         for (; j < r; j++) {
-            if (a[j] < pivot) {
+            if (a[j] > pivot) {
                 int tmp = a[j];
                 a[j] = a[i];
                 a[i] = tmp;
