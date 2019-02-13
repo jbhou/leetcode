@@ -15,7 +15,6 @@ public class SolutionKClosest {
 
     public int[][] kClosest(int[][] points, int K) {
 
-
         PriorityQueue<Integer> queue = new PriorityQueue<>(points.length);
         Map<Integer, Integer> map = new HashMap<>(points.length);
         for (int i = 0; i < points.length; i++) {
