@@ -6,6 +6,14 @@ import java.util.List;
 public class SolutionPermute {
 
 
+//    算法思路：
+//
+//            (1)n个元素的全排列=（n-1个元素的全排列）+（另一个元素作为前缀）；
+//
+//            (2)出口：如果只有一个元素的全排列，则说明已经排完，则输出数组；
+//
+//            (3)不断将每个元素放作第一个元素，然后将这个元素作为前缀，并将其余元素继续全排列，等到出口，出口出去后还需要还原数组；
+
     public List<List<Integer>> permute(int[] nums) {
 
         List<List<Integer>> list = new ArrayList<>();
