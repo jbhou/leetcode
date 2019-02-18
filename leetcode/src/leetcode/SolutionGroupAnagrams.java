@@ -41,7 +41,7 @@ public class SolutionGroupAnagrams {
         return new ArrayList<>(map.values());
     }
 
-    
+
 
 
 
