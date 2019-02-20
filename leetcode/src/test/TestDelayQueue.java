@@ -1,22 +1,14 @@
 package test;
 
 import java.util.Random;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.DelayQueue;
-import java.util.concurrent.Delayed;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class TestDelayQueue {
 
 
     public static void main(String[] args) {
         Cache  cache = new Cache();
-
-
-
     }
-
-
 }
 
 
