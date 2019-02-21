@@ -26,11 +26,11 @@ public class ListUtils {
         ListNode node4 = new ListNode(6);
         ListNode node5 = new ListNode(7);
         ListNode node6 = new ListNode(8);
-        ListNode node7 = new ListNode(2);
-        ListNode node8 = new ListNode(1);
-        ListNode node9 = new ListNode(3);
-        ListNode node10 = new ListNode(1);
-        ListNode node11 = new ListNode(5);
+        ListNode node7 = new ListNode(0);
+        ListNode node8 = new ListNode(-1);
+        ListNode node9 = new ListNode(-2);
+        ListNode node10 = new ListNode(-3);
+        ListNode node11 = new ListNode(-4);
 
         head.next = node2;
         node2.next = node3;
