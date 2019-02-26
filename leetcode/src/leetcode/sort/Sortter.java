@@ -11,7 +11,8 @@ public class Sortter {
 //        insertionSort(a);
 //        selectionSort(a);
 //        shellSort(a);
-        quickSort(a, 0, a.length - 1);
+//        quickSort(a, 0, a.length - 1);
+        mergeSort(a, 0, a.length - 1);
         for (int i = 0; i < a.length; i++) {
             System.err.print(a[i] + "\t");
         }
@@ -123,7 +124,7 @@ public class Sortter {
     public static void quickSort(int[] a, int p, int r) {
 
         if (p + 1 == 3) {
-            System.err.println("第三大的数是:"+a[p]);
+            System.err.println("第三大的数是:" + a[p]);
         }
 
         if (p >= r) {
@@ -165,6 +166,54 @@ public class Sortter {
             System.err.print(i + "\t");
         }
         System.err.println();
+
+    }
+
+
+    public static void mergeSort(int[] a, int startIndex, int endIndex) {
+
+
+        if (startIndex >= endIndex) {
+            return;
+        }
+        int mid = (startIndex + endIndex) / 2;
+
+        mergeSort(a, startIndex, mid);
+        mergeSort(a, mid + 1, endIndex);
+        merge(a, startIndex, mid, endIndex);
+
+
+    }
+
+    private static void merge(int[] a, int startIndex, int mid, int endIndex) {
+
+        int i = startIndex, j = mid + 1;
+        if (i >= j) {
+            return;
+        }
+        int[] tmp = new int[endIndex - startIndex + 1];
+        int k = 0;
+        while (i <= mid && j <= endIndex) {
+
+            if (a[i] <= a[j]) {
+                tmp[k++] = a[i++];
+            } else {
+                tmp[k++] = a[j++];
+            }
+        }
+
+        if (i <= mid || j <= endIndex) {
+            int start = i <= mid ? i : j;
+            int end = i <= mid ? mid : endIndex;
+            for (; start <= end; start++) {
+                tmp[k++] = a[start];
+            }
+
+
+        }
+        for (int m = 0; m < tmp.length; m++) {
+            a[m + startIndex] = tmp[m];
+        }
 
     }
 
