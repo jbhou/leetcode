@@ -209,7 +209,6 @@ public class Sortter {
                 tmp[k++] = a[start];
             }
 
-
         }
         for (int m = 0; m < tmp.length; m++) {
             a[m + startIndex] = tmp[m];
