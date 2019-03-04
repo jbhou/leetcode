@@ -1,6 +1,6 @@
 package leetcode.tree;
 
-public class SolutionLowestCommonAncestor {
+public class SolutionLowestCommonAncestor235 {
 
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
