@@ -2,13 +2,39 @@ package leetcode.search;
 
 import org.omg.PortableInterceptor.INACTIVE;
 
-public class SolutionMyPow {
+public class SolutionMyPow50 {
 
 
     public static void main(String[] args) {
 
 
-        System.err.println(myPow(2, Integer.MIN_VALUE + 1));
+//        System.err.println(myPow(2, Integer.MIN_VALUE + 1));
+
+        System.err.println(-Integer.MIN_VALUE);
+//        System.err.println(myPowDivideConquer(1, Integer.MIN_VALUE));
+
+
+    }
+
+
+    public static double myPowDivideConquer(double x, int n) {
+
+
+        if (n == 0) {
+            return 1;
+        }
+        if (n == 1) {
+            return x;
+        }
+        if (n < 0) {
+            return 1 / myPowDivideConquer(x, -n);
+        }
+        if (n % 2 == 0) {
+            return myPowDivideConquer(x, n - 1);
+        }
+        return myPowDivideConquer(x * x, n / 2);
+
+
     }
 
 
