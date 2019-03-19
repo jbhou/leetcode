@@ -8,7 +8,7 @@ public class SolutionSubsets78 {
 
 
     public static void main(String[] args) {
-        System.err.println(new SolutionSubsets78().subsets(new int[]{1, 2, 3}));
+        System.err.println(new SolutionSubsets78().subsetsByBitOperation(new int[]{1, 2, 3}));
     }
 
     public List<List<Integer>> subsets(int[] nums) {
@@ -22,7 +22,8 @@ public class SolutionSubsets78 {
 
 
     /**
-     *   将数组的子集加到list中
+     * 将数组的子集加到list中
+     *
      * @param list
      * @param tempList
      * @param startIndex
@@ -38,5 +39,49 @@ public class SolutionSubsets78 {
             tempList.remove(tempList.size() - 1);//backtrack and remove the top element in tempList
         }
     }
+
+
+    /**
+     * 000
+     * 001
+     * 010
+     * 011
+     * 100
+     * 101
+     * 110
+     * 111
+     *
+     * @param nums
+     * @return
+     */
+
+    public List<List<Integer>> subsetsByBitOperation(int[] nums) {
+
+        List<List<Integer>> result = new ArrayList<>();
+        int size = (int) Math.pow(2, nums.length);
+        for (int i = 0; i < size; i++) {
+            String b = fill(Integer.toBinaryString(i), nums.length);
+            List<Integer> list = new ArrayList<>();
+            for (int j = 0; j < b.length(); j++) {
+                if (b.charAt(j) == '1') {
+                    list.add(nums[j]);
+                }
+            }
+            result.add(list);
+        }
+        return result;
+    }
+
+    private String fill(String b, int length) {
+        if (b.length() == length) {
+            return b;
+        }
+        String s = b;
+        for (int i = 0; i < length - b.length(); i++) {
+            s = '0' + s;
+        }
+        return s;
+    }
+
 
 }
