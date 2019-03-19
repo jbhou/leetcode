@@ -28,7 +28,11 @@ import java.util.Set;
  * @version 1.0.0
  * @see
  */
-public class Soluation3Sum {
+public class SolutionThreeSum15 {
+
+
+
+
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         Set<String> set = new HashSet<>();
@@ -84,7 +88,7 @@ public class Soluation3Sum {
     // return res;
     // }
     public static void main(String[] args) {
-        List<List<Integer>> r = new Soluation3Sum().threeSum(new int[] { -1, 0, 1, 2, -1, -4 });
+        List<List<Integer>> r = new SolutionThreeSum15().threeSum(new int[] { -1, 0, 1, 2, -1, -4 });
         System.err.println(r);
     }
 }
