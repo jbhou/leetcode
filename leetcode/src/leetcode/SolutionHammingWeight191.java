@@ -9,13 +9,14 @@ public class SolutionHammingWeight191 {
     public static void main(String[] args) {
 
 
-        System.err.println(new SolutionHammingWeight191().hammingWeight(Integer.MAX_VALUE - 1));
+        System.err.println(new SolutionHammingWeight191().hammingWeight(Integer.MIN_VALUE));
 
 
     }
 
     public int hammingWeight(int n) {
-//
+
+
         int x = n;
         int count = 0;
         while (x > 0) {
@@ -23,7 +24,6 @@ public class SolutionHammingWeight191 {
             x = x & (x - 1);
         }
         return count;
-
 
 
     }
