@@ -6,7 +6,7 @@ public class SolutionFindPeakElement {
     public static void main(String[] args) {
         int[] a = new int[]{1, 2, 3, 2, 1, 3, 6, 5};
 
-        findPeakElement(a);
+        System.err.println(findPeakElement(a));
     }
 
     public static int findPeakElement(int[] a) {
