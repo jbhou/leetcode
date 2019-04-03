@@ -31,7 +31,7 @@ public class SolutionNumTrees96 {
 //        当i为根节点时  左子树有(i-1)个节点,右子树有(n-i)个节点
 //    所以:F(i) = G(i-1) + G(n-i)
 //    所以:G(n) = G(0)*G(n-1) * G(i)*G(n-2) + ... + G(n-1)*G(0)
-    
+
     public int numTrees(int n) {
 
 
