@@ -13,11 +13,16 @@ public class SolutionGenerateTrees95 {
     }
 
 
-
     public List<TreeNode> generateTrees(int n) {
+//        return n == 0 ? new ArrayList<>() : generateTrees(1, n);
 
 
-        return n == 0 ? new ArrayList<>() : generateTrees(1, n);
+        List<TreeNode> list = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            list.add(generateTrees(n, 1, i));
+        }
+        return list;
+
 
     }
 
@@ -31,7 +36,7 @@ public class SolutionGenerateTrees95 {
         }
         for (int i = start; i <= end; i++) {
 
-            List<TreeNode> leftSubTree = generateTrees(start, i-1);
+            List<TreeNode> leftSubTree = generateTrees(start, i - 1);
             List<TreeNode> rightSubTree = generateTrees(1 + i, end);
 
             for (TreeNode left : leftSubTree) {
@@ -45,8 +50,27 @@ public class SolutionGenerateTrees95 {
             }
         }
         return res;
+    }
 
+
+    public TreeNode generateTrees(int max, int min, int current) {
+
+
+        if (current < min || current > max) {
+            return null;
+        }
+
+        TreeNode left = generateTrees(max, min, current - 1);
+        TreeNode right = generateTrees(max, min, current + 1);
+
+
+        TreeNode root = new TreeNode(current);
+        root.left = left;
+        root.right = right;
+        return root;
     }
 
 
 }
+
+
