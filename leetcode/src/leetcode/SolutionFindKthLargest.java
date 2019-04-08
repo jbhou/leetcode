@@ -6,7 +6,7 @@ public class SolutionFindKthLargest {
 
 
     public static void main(String[] args) {
-        int a[] = new int[]{8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
+        int a[] = new int[]{1, 2, 3, 4, 65, 3, 2, 1, 4, 2, 45};
         System.err.println(new SolutionFindKthLargest().findKthLargest(a, 3));
     }
 
