@@ -4,7 +4,7 @@ package leetcode.linkedlist;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SoluationDeleteDuplicates {
+public class SoluationDeleteDuplicates83 {
 
 
     public static void main(String[] args) {
@@ -40,10 +40,9 @@ public class SoluationDeleteDuplicates {
                 next = next.next;
             }
         }
-
         return head;
-
     }
+
 
 
 }

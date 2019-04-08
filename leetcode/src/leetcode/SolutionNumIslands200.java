@@ -20,17 +20,12 @@ public class SolutionNumIslands200 {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == '1') {
-
                     DFSMark(grid, i, j);
-                    count++;    if (m == 0) return 0;    if (m == 0) return 0;
+                    count++;
                 }
-
-
             }
-
         }
         return count;
-
     }
 
     private void DFSMark(char[][] grid, int i, int j) {
@@ -44,6 +39,7 @@ public class SolutionNumIslands200 {
         }
 
     }
+
 
 
 }
