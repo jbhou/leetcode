@@ -40,31 +40,47 @@ public class SoluationReverseInteger7 {
     }
 
     public static void main(String[] args) {
-        int v = new SoluationReverseInteger7().reverse2(213);
+        int v = new SoluationReverseInteger7().reverse3(-2147483648);
         System.err.println(v);
     }
 
-
     public int reverse2(int x) {
-
-
         int m = Math.abs(x);
         long r = 0;
-
-
         while (m != 0) {
             r = (r * 10) + (m % 10);
             m = m / 10;
         }
-
         if (x < 0) {
             r = r * -1;
         }
-
-        if(r>Integer.MAX_VALUE || r<Integer.MIN_VALUE) {
+        if (r > Integer.MAX_VALUE || r < Integer.MIN_VALUE) {
             return 0;
         }
         return (int) r;
+    }
+
+
+    public int reverse3(int x) {
+
+
+        if (x < 0) return x == Integer.MIN_VALUE ? 0 : -1 * reverse3(-1 * x);
+
+
+        int max1 = Integer.MAX_VALUE / 10;
+        int max2 = Integer.MAX_VALUE % 10;
+        int m = Math.abs(x);
+
+        int result = 0;
+        while (m > 0) {
+
+            if (result > max1 || (result == max1 && m % 10 > max2)) return 0;
+            result = result * 10 + m % 10;
+            m = m / 10;
+        }
+
+        return result;
+
     }
 
 
