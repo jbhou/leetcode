@@ -4,7 +4,7 @@ public class GeekSolutionJump45 {
     public static void main(String[] args) {
 
 
-        int m = new GeekSolutionJump45().jump(new int[]{2, 3, 1, 1, 4});
+        int m = new GeekSolutionJump45().jumpByDP(new int[]{2, 3, 1, 1, 4});
         System.err.println(m);
 
     }
@@ -27,6 +27,30 @@ public class GeekSolutionJump45 {
             max = Math.max(max, i + a[i]);
         }
         return times;
+    }
+
+
+    /**
+     * DP
+     *
+     * @param a
+     * @return
+     */
+    public int jumpByDP(int[] a) {
+
+        int[] dp = new int[a.length];
+        dp[0] = 0;
+        for (int i = 1; i < a.length; i++) {
+            dp[i] = Integer.MAX_VALUE;
+            for (int j = 0; j < i; j++) {
+                if (i - j <= a[j]) {
+                    dp[i] = Math.min(dp[i], dp[j] + 1);
+                }
+            }
+        }
+        return dp[a.length - 1];
+
+
     }
 
 
