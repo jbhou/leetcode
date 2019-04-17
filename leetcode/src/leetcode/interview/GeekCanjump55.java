@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.interview;
 
 public class GeekCanjump55 {
 
