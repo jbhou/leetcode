@@ -81,9 +81,18 @@ public class Heap {
         for(int i=0;i<a.length;i++){
             System.err.println(a[i]);
         }
-
-
     }
+
+
+
+
+
+
+
+
+
+
+
 
 
 //    private static void heapify(int[] a, int n, int i) {
