@@ -61,8 +61,54 @@ public class GeekSolutionsearchInsert35 {
 
     public static void main(String[] args) {
         System.err.println(new GeekSolutionsearchInsert35().binarySearchInsert(new int[]{1, 3}, 8));
-
-
     }
+
+
+    public int searchIndex(int[] nums, int target) {
+
+        int l = 0, r = nums.length - 1, m;
+        while (l < r) {
+            m = l + ((r - l) >> 1);
+            if (target == nums[m]) {
+                return m;
+            } else {
+
+                if (m == 0 || (target > nums[m - 1] && target > nums[m])) {
+                    return m;
+                }
+
+                if (target > nums[m]) {
+                    l = m + 1;
+                }
+                if (target < nums[m]) {
+                    r = m - 1;
+                }
+            }
+        }
+
+
+        return nums.length;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

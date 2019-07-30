@@ -57,4 +57,29 @@ public class SoluationReverseList {
         head.next = null;
         return prev;
     }
+
+
+    public static ListNode reverse2(ListNode head) {
+
+
+        ListNode cur = head;
+        ListNode previous = null;
+        ListNode newHead = null;
+        ListNode next = null;
+
+        while (cur != null) {
+            next = cur.next;
+            if (next == null) {
+                newHead = cur;
+            }
+            cur.next = previous;
+            previous = cur;
+            cur = next;
+        }
+        return newHead;
+
+
+    }
+
+
 }
