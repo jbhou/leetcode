@@ -53,6 +53,36 @@ public class GeekSolutionIsValidBST98 {
 
         if ((min != null && min > root.val) || (max != null && max < root.val)) return false;
         return validate(root.left, min, root.val) && validate(root.right, root.val, max);
+    }
+
+
+    TreeNode pre;
+
+    public boolean v(TreeNode treeNode){
+
+        if(treeNode==null){
+            return true;
+        }
+
+        if(!v(treeNode.left)){
+            return false;
+        }
+        if(pre!=null && pre.val>=treeNode.val){
+            return false;
+        }
+        pre=treeNode;
+        return v(treeNode.right);
+
+
+
+
+
 
     }
+
+
+
+
+
+
 }

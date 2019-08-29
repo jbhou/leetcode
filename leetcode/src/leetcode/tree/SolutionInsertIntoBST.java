@@ -2,7 +2,7 @@ package leetcode.tree;
 
 import sun.reflect.generics.tree.Tree;
 
-public class SolutionInsertIntoBST {
+public class  SolutionInsertIntoBST {
 
 
     public TreeNode insertIntoBST(TreeNode root, int val) {

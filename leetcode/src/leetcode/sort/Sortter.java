@@ -141,6 +141,7 @@ public class Sortter {
     private static int partition(int[] a, int p, int r) {
 
         int pivot = a[r];
+
         int i = p;
         int j = p;
         for (; j < r; j++) {

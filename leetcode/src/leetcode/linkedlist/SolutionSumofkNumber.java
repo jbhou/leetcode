@@ -9,7 +9,7 @@ public class SolutionSumofkNumber {
 
     public static void main(String[] args) {
 
-        System.err.println(new SolutionSumofkNumber().sumofkNumber(20,25));
+        System.err.println(new SolutionSumofkNumber().sumofkNumber(5,5));
 
     }
 

@@ -11,7 +11,6 @@ public class Interval {
     }
 
     public Interval() {
-
     }
 
     @Override
