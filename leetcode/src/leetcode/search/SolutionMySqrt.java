@@ -34,8 +34,8 @@ public class SolutionMySqrt {
             }
         }
         return high - 1;
-
     }
+
 
 
 }

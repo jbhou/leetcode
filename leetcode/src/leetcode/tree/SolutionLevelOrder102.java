@@ -1,5 +1,6 @@
 package leetcode.tree;
 
+import leetcode.linkedlist.ListNode;
 import sun.reflect.generics.tree.Tree;
 
 import java.util.*;
@@ -65,6 +66,50 @@ public class SolutionLevelOrder102 {
         result.get(level - 1).add(root.val);
         dfs(result, root.left, level + 1);
         dfs(result, root.right, level + 1);
+    }
+
+
+    public List<List<Integer>> levelBFS(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            List<Integer> list = new ArrayList<>();
+            int qsize = queue.size();
+
+            for (int i = 0; i < qsize; i++) {
+                TreeNode node = queue.poll();
+                if (node != null) {
+                    list.add(node.val);
+                    if (node.left != null) queue.add(node.left);
+                    if (node.right != null) queue.add(node.right);
+                }
+                result.add(list);
+            }
+        }
+        return result;
+    }
+
+
+    public List<List<Integer>> levelDFS(TreeNode root) {
+
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        levelDFS(root, result, 1);
+        return result;
+
+    }
+
+    private void levelDFS(TreeNode root, List<List<Integer>> result, int level) {
+        if (root == null) return;
+        if (result.size() < level) {
+            result.add(new ArrayList<>());
+        }
+
+        result.get(level - 1).add(root.val);
+        levelDFS(root.left, result, level + 1);
+        levelDFS(root.right, result, level + 1);
 
 
     }
