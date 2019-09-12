@@ -26,7 +26,7 @@ public class ByteDancecontainsNearbyAlmostDuplicate {
 
         int[] a = new int[]{4, 1, -1, 6, 5};
 
-        new ByteDancecontainsNearbyAlmostDuplicate().containsNearbyAlmostDuplicate(a, 3, 1);
+        new ByteDancecontainsNearbyAlmostDuplicate().containsNearbyAlmostDuplicate2(a, 3, 1);
 
 
     }
