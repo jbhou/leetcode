@@ -1,8 +1,7 @@
 package leetcode.interview.bytedance;
 
 
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 //给定一个整数数组，判断数组中是否有两个不同的索引 i 和 j，
 // 使得 nums [i] 和 nums [j] 的差的绝对值最大为 t，并且 i 和 j 之间的差的绝对值最大为 ķ。
@@ -26,10 +25,13 @@ public class ByteDancecontainsNearbyAlmostDuplicate {
 
         int[] a = new int[]{4, 1, -1, 6, 5};
 
+
         new ByteDancecontainsNearbyAlmostDuplicate().containsNearbyAlmostDuplicate(a, 3, 1);
 
+        Map<String,String> map=new HashMap<>();
 
     }
+
 
     public boolean containsNearbyAlmostDuplicate2(int[] nums, int k, int t) {
 

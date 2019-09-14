@@ -2,6 +2,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
 
 public class SolutionPermute {
 
@@ -55,13 +56,23 @@ public class SolutionPermute {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+//
+//        int[] a = new int[3];
+//        a[0] = 1;
+//        a[1] = 2;
+//        a[2] = 3;
+//        System.err.println(new SolutionPermute().permute(a));
 
-        int[] a = new int[3];
-        a[0] = 1;
-        a[1] = 2;
-        a[2] = 3;
-        System.err.println(new SolutionPermute().permute(a));
+
+        Object a= new Object();
+        Object b= new Object();
+     //   synchronized (a){
+            b.wait();
+     //   }
+
+
+
 
     }
 }
