@@ -21,7 +21,7 @@ public class SoluationReverseList {
 
 //        ListNode newList = reverse(head);
 
-        ListNode newH = reverseByRecursion2(head);
+        ListNode newH = rev(head);
         ListUtils.printList(newH);
 
 
@@ -114,6 +114,31 @@ public class SoluationReverseList {
         ListNode newHead = reverseByRecursion2(head.next);
         head.next.next = head;
         head.next = null;
+        return newHead;
+
+
+    }
+
+
+    static ListNode rev(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode cur = head;
+        ListNode pre = null;
+        ListNode newHead = null;
+        ListNode next = null;
+        while (cur != null) {
+            next = cur.next;
+
+            if (next == null) {
+                newHead = cur;
+            }
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+
+        }
         return newHead;
 
 

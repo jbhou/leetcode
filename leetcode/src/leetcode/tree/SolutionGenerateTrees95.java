@@ -1,5 +1,6 @@
 package leetcode.tree;
 
+import com.sun.deploy.panel.TreeBuilder;
 import sun.reflect.generics.tree.Tree;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ public class SolutionGenerateTrees95 {
 
 
     public static void main(String[] args) {
-        System.err.println(new SolutionGenerateTrees95().generateTrees(3));
+        System.err.println(new SolutionGenerateTrees95().generateTrees2(1,3));
     }
 
 
@@ -68,6 +69,34 @@ public class SolutionGenerateTrees95 {
         root.left = left;
         root.right = right;
         return root;
+    }
+
+
+    public List<TreeNode> generateTrees2(int start, int end) {
+
+        List<TreeNode> nodes = new ArrayList<>();
+        if (start > end) {
+            nodes.add(null);
+            return nodes;
+        }
+
+        for (int i = start; i <= end; i++) {
+
+            List<TreeNode> lefts = generateTrees2(start, i - 1);
+            List<TreeNode> right = generateTrees2(i + 1, end);
+
+            for (TreeNode left : lefts) {
+                for (TreeNode treeNode : right) {
+                    TreeNode root = new TreeNode(i);
+                    root.right = treeNode;
+                    root.left = left;
+                    nodes.add(root);
+                }
+            }
+
+        }
+        return nodes;
+
     }
 
 

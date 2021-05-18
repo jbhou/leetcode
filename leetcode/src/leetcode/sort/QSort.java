@@ -61,6 +61,23 @@ public class QSort {
     }
 
 
+    private int partition2(int a[], int start, int end) {
+
+        int i = start, j = start;
+        int pivot = a[end];
+        for (; j < end; j++) {
+            if (a[j] > pivot) {
+                int tmp = a[j];
+                a[j] = a[i];
+                a[i] = tmp;
+                i++;
+            }
+        }
+        a[end] = a[i];
+        a[i] = pivot;
+        return i;
+    }
+
 }
 
 

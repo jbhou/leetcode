@@ -8,7 +8,7 @@ public class SolutionSwapPairs {
 
         ListNode head = ListUtils.createGeneralList(5);
         ListUtils.printList(head);
-        ListNode newH = swapPairs(head);
+        ListNode newH = swapPairs2(head);
         ListUtils.printList(newH);
 
     }
@@ -21,7 +21,7 @@ public class SolutionSwapPairs {
         newHead.next = head;
         ListNode current = newHead;
 
-        while (current.next!=null && current.next.next != null) {
+        while (current.next != null && current.next.next != null) {
             ListNode a = current.next;
             ListNode b = current.next.next;
             a.next = b.next;
@@ -30,6 +30,33 @@ public class SolutionSwapPairs {
             current = a;
         }
         return newHead.next;
+    }
+
+
+    public static ListNode swapPairs2(ListNode head) {
+
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode cur = dummy;
+
+        while (cur.next != null && cur.next.next != null) {
+            ListNode a = cur.next;
+            ListNode b = a.next;
+
+            a.next = b.next;
+            b.next = a;
+            cur.next = b;
+            cur = a;
+
+
+        }
+
+
+        return dummy.next;
+
+
     }
 
 

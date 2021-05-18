@@ -12,9 +12,8 @@ public class GeekSolutionJump45 {
 
     int min = Integer.MAX_VALUE;
 
-    //https://blog.csdn.net/MebiuW/article/details/51171153
-    public int jump(int[] a) {
 
+    public int jump(int[] a) {
 
         int times = 0;
         int reached = 0;
@@ -28,7 +27,6 @@ public class GeekSolutionJump45 {
         }
         return times;
     }
-
 
     /**
      * DP
